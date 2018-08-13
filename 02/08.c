@@ -11,11 +11,7 @@ typedef struct _node node;
 typedef node *list;  // pointer to first Node
 
 int sum(list l) {
-	int sum = 0;
-	for (list cur = l; cur != NULL; cur = cur->next) {
-		sum += cur->value;
-	}
-	return sum;
+
 }
 
 int main(int argc, char *argv[]) {
