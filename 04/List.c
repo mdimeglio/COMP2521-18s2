@@ -7,18 +7,24 @@ struct node {
 	struct node *next;
 };
 
-// recursive functions
+
 void drop(List l) {
-	// TODO!
+	if (! isEmpty(l)) {
+		drop(tail(l));
+		free(l);
+	}
 }
 
 List map(int (*f)(int), List l) {
 	if (isEmpty(l)) {
-		return l;
+		return empty();
 	} else {
-		return cons((*f)(head(l)), map(f, tail(l)));
+		List newTail = map(f, tail(l));
+		int newHead = (*f)(head(l));
+		return cons(newHead, newTail);
 	}
 }
+
 
 int foldr(int (*f)(int,int), int z, List l) {
 	if (isEmpty(l)) {
