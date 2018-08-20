@@ -5,13 +5,13 @@
 
 sort='./sortA'
 
-for i in `seq 1 1000`
+for i in `seq 1 10`
 do
     ./gen 1000 R | sed -r -e "s/^(1|2|3|4|5|6|7|8|9|10) /1 /" > stabilityInput.txt
     cat stabilityInput.txt | "$sort" | egrep "^1 " > stabilityOutput.txt
     cat stabilityInput.txt | egrep "^1 " > stabilityExpected.txt
     
-    if [ -z `diff stabilityOutput.txt stabilityExpected.txt` ]
+    if [ -z "`diff stabilityOutput.txt stabilityExpected.txt`" ]
     then
         echo "Test $i passed"
     else

@@ -5,7 +5,7 @@
 
 printf "N,A-Rand(sec),B-Rand(sec),A-Asc(sec),B-Asc(sec),A-Desc(sec),B-Desc(sec),\n"
 
-for n in `seq 10000 500 12000`
+for n in `seq 10000 500 100000`
 do
     for i in `seq 1 5`
     do
